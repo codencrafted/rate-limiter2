@@ -1,0 +1,29 @@
+redis:
+  address: "localhost:6379"
+  password: ""
+  db: 0
+
+http:
+  address: ":8080"
+
+grpc:
+  address: ":9090"
+
+rate_limiter:
+  default_limits:
+    second:
+      requests: 10
+      window: 1s
+    minute:
+      requests: 100
+      window: 1m
+    hour:
+      requests: 1000
+      window: 1h
+    day:
+      requests: 10000
+      window: 24h
+  
+  whitelist:
+    - "127.0.0.1"
+    - "admin-api-key" 
